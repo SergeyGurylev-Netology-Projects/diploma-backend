@@ -9,9 +9,7 @@ from .models import File, UserSettings
 class FileSerializer(ModelSerializer):
     class Meta:
         model = File
-        # fields = ['id', 'filename', 'extension', 'size', 'description', 'handle', 'url', 'user', 'upload_at', 'download_at', 'created_at',]
         exclude = []
-        # read_only_fields = ['handle', 'user_id', 'download_at', 'created_at']
 
 
 class UserSerializer(ModelSerializer):

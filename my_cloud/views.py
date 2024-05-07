@@ -18,6 +18,12 @@ logging.basicConfig(level=logging.DEBUG, format='%(asctime)s %(message)s')
 logger = logging.getLogger(__name__)
 
 
+def front(request):
+    context = { }
+    from django.shortcuts import render
+    return render(request, "index.html", context)
+
+
 def log_request(func):
     def wrapper(self, request, *args, **kwargs):
         logger.debug(f"{request.user} {request.method} {request.get_full_path()}")

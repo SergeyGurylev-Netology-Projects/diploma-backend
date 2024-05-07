@@ -1,5 +1,4 @@
 from django.urls import path, include
-from rest_framework.routers import DefaultRouter
 
 from .views import UserView, FileView, UserSettingsView
 
@@ -27,11 +26,3 @@ urlpatterns = [
         'patch': 'settings_update',
     })),
 ]
-
-# router = DefaultRouter()
-#
-# router.register('file', FileView)
-#
-# urlpatterns = [
-#     path('api/', include(router.urls)),
-# ]
