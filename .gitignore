@@ -1,4 +1,5 @@
 .idea
+.env
 media/deleted_files
 media/user_files
 my_cloud/migrations
