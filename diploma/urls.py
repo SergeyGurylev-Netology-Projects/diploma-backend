@@ -1,7 +1,7 @@
 from django.conf.urls.static import static
 from django.contrib import admin
-from django.template.defaulttags import url
-from django.urls import path, include
+from django.urls import path, include, re_path
+from django.views.generic import TemplateView
 
 from diploma import settings
 
@@ -13,6 +13,7 @@ urlpatterns = [
     path('api/link-generation', issue_link_generation),
     path('download/<uuid>', issue_link_download),
     path('api/', include('my_cloud.urls')),
-    path("", front, name="front")
+    path("", front, name="front"),
+    re_path(r'^(?:.*)/?$', TemplateView.as_view(template_name="index.html")),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
