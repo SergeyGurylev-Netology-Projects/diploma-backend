@@ -13,7 +13,6 @@ urlpatterns = [
     path('api/link-generation', issue_link_generation),
     path('download/<uuid>', issue_link_download),
     path('api/', include('my_cloud.urls')),
-    path("", front, name="front"),
-    url(r'^(?:.*)/?$', front),
+    path("", front, name="front")
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
