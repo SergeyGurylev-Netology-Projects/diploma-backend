@@ -1,5 +1,6 @@
 from django.conf.urls.static import static
 from django.contrib import admin
+from django.template.defaulttags import url
 from django.urls import path, include
 
 from diploma import settings
@@ -13,5 +14,6 @@ urlpatterns = [
     path('download/<uuid>', issue_link_download),
     path('api/', include('my_cloud.urls')),
     path("", front, name="front"),
+    url(r'^(?:.*)/?$', front),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
