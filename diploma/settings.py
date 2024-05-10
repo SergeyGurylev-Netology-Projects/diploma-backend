@@ -164,11 +164,6 @@ REST_FRAMEWORK = {
     ],
 }
 
-# CSRF_COOKIE_HTTPONLY = True
-
-
-# White listing the localhost:3000 port
-# for React
 CORS_ORIGIN_WHITELIST = (
     'http://localhost:5173',
     'http://127.0.0.1:8000',
@@ -176,6 +171,4 @@ CORS_ORIGIN_WHITELIST = (
     'http://localhost',
 )
 
-# CORS_ALLOWED_ORIGINS = [
-#     'http://localhost:5173',
-# ]
+SECURE_CROSS_ORIGIN_OPENER_POLICY = None
